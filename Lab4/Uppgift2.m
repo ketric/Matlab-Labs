@@ -37,7 +37,7 @@ surf(X1,X2,l3(X1,X2),'facecolor','cyan')
 xlabel('x_1'), ylabel('x_2'), zlabel('x_3')
 axis([-1 2 -1 2 -4 7]), axis vis3d, grid on, box on
 
-%inga lösningar
+%inga lÃ¶sningar
 R=rref([A B])
 xt=@(t)[1.6667*t;3*t;t]
 P=[xt(0) xt(2)];
