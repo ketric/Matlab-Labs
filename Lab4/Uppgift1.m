@@ -15,7 +15,7 @@ axis equal, axis([0 5 -3 3])
 R = rref([A B])
 x=[3;1];
 plot(x(1),x(2),'ro','markersize',3,'linewidth',4), hold off
-%Ingen Sk‰rningspunkt
+%Ingen Sk√§rningspunkt
 
 
 %%
