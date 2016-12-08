@@ -30,7 +30,7 @@ t = [1; -0.5; 2];
 
 n = [a; b; c]; % normal
 
-% sätter kub i startpos
+% sÃ¤tter kub i startpos
 for i = 1:8
     H(:,i) = H(:,i) + t;
 end
@@ -56,8 +56,8 @@ Si = S(1,:);
 fill3(G(1,Si), G(2,Si), G(3,Si), 'b', 'facealpha', 0.7);
 
 H3 = H;
-% ändrar koordinaterna i H till spegling
-% ritar cirklar i varje hörn
+% Ã¤ndrar koordinaterna i H till spegling
+% ritar cirklar i varje hÃ¶rn
 for i = 1:8
     corner = H(:, i);
     angle = (d - dot(n, corner)) / dot(n, n);
