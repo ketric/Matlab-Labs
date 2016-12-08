@@ -4,10 +4,10 @@ y=Uppgift4(x);
 plot(x,y)
 grid on
 
-%linspace visar oss hur mycket v‰rde pÂ x och y axeln som vi kan se
+%linspace visar oss hur mycket v√§rde p√• x och y axeln som vi kan se
 %%
 x=fzero(@Uppgift4,-1)
 
 x=fzero(@Uppgift4,1)
 
-%fzero letar efter nollst‰llen
+%fzero letar efter nollst√§llen
