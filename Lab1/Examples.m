@@ -16,20 +16,20 @@ s=0;
 for i =3:52
     s=s+i;
 end
-disp('Summan är')
+disp('Summan Ã¤r')
 disp(s)
 
 %% ex3
 %Figure 1
 x=[0.1 0.8 0.9 0.1];
 y=[0.2 0.1 0.7 0.2];
-subplot(1,2,1) % Delar in Figure i 1x2 delar och gör 1:a aktivt
-plot(x,y,'-o') % ’-o’ färbinder med räta linjer och markerar med ringar
+subplot(1,2,1) % Delar in Figure i 1x2 delar och gÃ¶r 1:a aktivt
+plot(x,y,'-o') % â€™-oâ€™ fÃ¤rbinder med rÃ¤ta linjer och markerar med ringar
 axis([0 1 0 0.8]) % Ger lite "luft" runt triangeln
 grid on
 
 %Figure 2
-subplot(1,2,2) % Delar in Figure i 1x2 delar och gör 2:a aktivt
-fill(x,y,'green') % Fyller triangeln med grön färg
+subplot(1,2,2) % Delar in Figure i 1x2 delar och gÃ¶r 2:a aktivt
+fill(x,y,'green') % Fyller triangeln med grÃ¶n fÃ¤rg
 axis([0 1 0 0.8])
 grid on
