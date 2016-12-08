@@ -1,61 +1,25 @@
-%%
-%A
-A = [1 3;5 -2];
-B = [6;13];
+X=[0.1 0.8 0.9 0.1];
+Y=[0.2 0.1 0.7 0.2];
 
-l1=@(x1)(B(1)-A(1,1)*x1)/A(1,2);
-l2=@(x1)(B(2)-A(2,1)*x1)/A(2,2);
-x1=[0 5];
-plot(x1,l1(x1),'b','linewidth',2), hold on
-plot(x1,l2(x1),'g','linewidth',2)
-xlabel('x_1'), ylabel('x_2')
-axis equal, axis([0 5 -3 3])
-
-
-R = rref([A B])
-x=[3;1];
-plot(x(1),x(2),'ro','markersize',3,'linewidth',4), hold off
-%Ingen Skärningspunkt
+fill(X,Y,'g','edgecolor','k','linewidth',1), hold on
+axis equal, axis([-1.5 2 -0.1 2]), pause(1)
+v=pi/6; 
+A=[cos(v) -sin(v); sin(v) cos(v)];
+P=[X;Y];
+for i=1:3
+P=A*P; % Varje koordinatpar roteras med vinkeln pi/6
+fill(P(1,:),P(2,:),'g','edgecolor','r','linewidth',1), pause(1)
+end
+plot(0,0,'ko','linewidth',2,'markersize',2) % origo
+hold off
 
 
-%%
-%B
-A = [1 3;2 6];
-B = [5;12];
-
-l1=@(x1)(B(1)-A(1,1)*x1)/A(1,2);
-l2=@(x1)(B(2)-A(2,1)*x1)/A(2,2);
-x1=[0 5];
-plot(x1,l1(x1),'b','linewidth',2), hold on
-plot(x1,l2(x1),'g','linewidth',2)
-xlabel('x_1'), ylabel('x_2')
-axis equal, axis([0 5 -3 3])
-
-
-%%
-A = [1 3;2 6];
-B = [5;10];
-
-l1=@(x1)(B(1)-A(1,1)*x1)/A(1,2);
-l2=@(x1)(B(2)-A(2,1)*x1)/A(2,2);
-x1=[0 5];
-plot(x1,l1(x1),'b','linewidth',2), hold on
-plot(x1,l2(x1),'g','linewidth',2)
-xlabel('x_1'), ylabel('x_2')
-axis equal, axis([-1 6 -5 5])
-
-%%
-A1 = [1 3; 2 6];
-b1 = [5;12];
-b2 = [5; 10];
-R1 = rref([A1 b1]);
-R2 = rref([A1 b2]);
-%plot(x(1),x(2),'ro','markersize',3,'linewidth',4), hold off;
-%R1
-xt=@(t)[t;(0-t)/3];
-P=[xt(0) xt(2)];
-plot(P(1,:),P(2,:),'b','linewidth',3),hold on
-%R2
-xt=@(t)[t;(5-t)/3];
-P=[xt(0) xt(2)];
-plot(P(1,:),P(2,:),'g','linewidth',3)
+fill(X,Y,'g','edgecolor','k','linewidth',1), hold on
+axis equal, axis([-1.5 2 -0.1 2]), pause(1)
+t=[-0.6;0.3];
+P=[X;Y];
+for i=1:3
+P=P+t*ones(size(X));
+fill(P(1,:),P(2,:),'g','edgecolor','r','linewidth',1), pause(1)
+end
+hold off

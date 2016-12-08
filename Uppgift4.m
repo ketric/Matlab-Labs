@@ -1,24 +1,15 @@
-A = [11 4 3 7; 2 6 8 5; 9 12 1 10;]
+xmin=-2; xmax=2; ymin=-2; ymax=2;
+a=1; b=-1; c=4; d=1; s=2; z=0.25;
+X=[xmin xmax xmax xmin]; 
+Y=[ymin ymin ymax ymax];
+Z=(d-a*X-b*Y)/c;
+fill3(X,Y,Z,'g','facealpha',0.7)
+xlabel('x'), ylabel('y')
+axis equal, grid on, hold on
 
-B = [3;1;5]
+point = [0 0 1/4];
+velocity = [1 -1 4]; %[a b c]riktning av vektorn
 
-C = [4 2 8 0 6]
+normalVector = point + velocity; %pos av normalvektorn
+quiver3(point(1), point(2), point (3), normalVector(1), normalVector(2), normalVector(3));
 
-%Hur ser man att den ena är en kolonnvektor och att den andra är en
-%radvektor?
-%m = rad     n=kolumn
-[m,n] = size(B)
-
-[m,n] = size(C)
-
-%I vårt fall är m>1 och n=1 för att vi staplar siffrorna under varandra
-%vår radvektor kommer alltid ha m=1 och n>=1
-
-
-%Vad har elementen för rad resp kolonnindex?
-%Size räknar kolumn inte rader
-[maximum,i] = max(A)
-[minimum,i] = min(A)
-
-%max = RAD: 1 3 2 3 Kolumn: 1 2 3 4
-%min = RAD: 2 1 3 2 Kolumn: 1 2 3 4
